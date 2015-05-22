@@ -29,7 +29,12 @@
             }, options)
         ;
 
-        return this.each(function eachEl() {
+        $.fn.fitText.destroy = function destroy() {
+            $(window).off('resize.fittext orientationchange.fittext');
+        };
+
+        return this.each(function eachEl(){
+
 
             // Store the object
             var $this = $(this);
